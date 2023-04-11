@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Lista de empleados por trabajo</h1>
+    <form method="GET">{% csrf_token %}
+        <input type="text" id="job" name="job" placeholder="Ingrese tipo de trabajo aqui">
+        <button type = "submit"> Buscar</button>
+    </form>
+
+    <h3> Lista resultados</h3>
+    <ul>
+        {% for e in by_job  %}
+            <li>{{ e }}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

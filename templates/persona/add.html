@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registrar Empleado
+{% endblock title %}
+
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x" style="margin-top: 10px;">
+       <h3 class="cell">Registrar Empleado</h3>
+<!--        'enctype="multipart/form-data"' es para que la imagen se guarde tb en el admin.-->
+       <form class="cell callout grid-x grid-margin-x " method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="medium-6 cell">
+                <label>Nombres:
+                  {{ form.first_name }}
+                </label>
+            </div>
+           <div class="medium-6 cell">
+                <label>Apellidos:
+                  {{ form.last_name }}
+                </label>
+            </div>
+           <div class="medium-6 cell">
+                <label>Trabajo:
+                  {{ form.job }}
+                </label>
+            </div>
+           <div class="medium-6 cell">
+                <label>Departamento:
+                  {{ form.departamento }}
+                </label>
+            </div>
+           <div class="medium-12 cell">
+                <label>Habilidades:
+                  {{ form.habilidades }}
+                </label>
+           </div>
+           <div class="medium-12 cell">
+                <label>Foto:
+                  {{ form.avatar }}
+                </label>
+           </div>
+           <div class="medium-12 cell">
+                <button type="submit" class="button success">Guardar</button>
+           </div>
+       </form>
+    </div>
+</div>
+{% endblock content %}
+
+

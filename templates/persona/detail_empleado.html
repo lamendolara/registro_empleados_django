@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!--sino se llama a los bloques con block y endblock el contenido del html no aparece por el extends-->
+{% block title %}
+    {{ object.full_name }}
+{% endblock title %}
+
+{% block content %}
+{% include 'includes/header.html' %}
+<div class="grid-container">
+    <div class="grid-x grid-margin-x align-center" style="margin-top: 30px;">
+        <div class="cell callout large-4 card" style="width: 300px;">
+            <div class="card-divider">
+                <h5>{{ empleado.full_name }}</h5>
+            </div>
+                {% if empleado.avatar %}
+    <!--        para acceder a una imagen además de etiquetar el atributo siempre especificar url-->
+                    <img src="{{ empleado.avatar.url }}">
+                {% else %}
+                    <img src="{% static 'img/perfil_sin_foto.jpg' %}">
+                {% endif %}
+            <div class="card-section">
+                <p>Posición: {{ empleado.get_job_display }}</p>
+                <p>Departamento: {{ empleado.departamento.shor_name }}</p>
+                <p><span class="label">Habilidades:</span></p>
+                <ul class="vertical menu">
+                    {% for h in empleado.habilidades.all %}
+                        <li>{{ h.habilidad }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+{% endblock content %}

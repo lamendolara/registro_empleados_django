@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Listando elementos de una BD</h1>
+    {{ lista_prueba }}
+
+    <ul>
+        {% for prueba in lista_prueba %}
+            <li>{{ prueba.titulo }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
