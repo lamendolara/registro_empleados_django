@@ -20,13 +20,13 @@
       <li class="is-active orbit-slide">
         <figure class="orbit-figure">
           <img class="orbit-image" src="{% static 'img/foto_inicio_uno.jpg' %}" alt="Space">
-          <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          <figcaption class="orbit-caption">Registre sus empleados.</figcaption>
         </figure>
       </li>
       <li class="orbit-slide">
         <figure class="orbit-figure">
           <img class="orbit-image" src="{% static 'img/foto_inicio_dos.jpg' %}" alt="Space">
-          <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+          <figcaption class="orbit-caption">¡Todos los datos que quieras a medida, filtros, etc!</figcaption>
         </figure>
       </li>
     </ul>
@@ -41,7 +41,7 @@
     <div class="callout success">
       <h5>Registra y controla empleados</h5>
       <p>Gestiona altas, actualizaciones y bajas en tu plantilla.</p>
-      <a href="#">Ver empleados</a>
+      <a href="{% url 'persona_app:empleados_all' %}">Ver empleados</a>
     </div>
   </div>
 </div>
