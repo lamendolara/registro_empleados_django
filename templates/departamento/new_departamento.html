@@ -4,8 +4,6 @@
     Registrar Departamento
 {% endblock title %}
 
-
-
 {% block content %}
 {% include 'includes/header.html' %}
 
@@ -34,35 +32,14 @@
                   {{ form.shorname }}
                 </label>
             </div>
-            <div class="medium-12 cell">
+            <div class="medium-2 cell">
                 <button type="submit" class="button success">Guardar</button>
+            </div>
+           <div class="medium-2 cell">
+                <a href="{% url 'persona_app:inicio' %}" class="submit alert button">Cancelar</a>
             </div>
        </form>
     </div>
 </div>
 {% endblock content %}
 
-    <h1>Registrar nuevo departamento</h1>
-
-    <form method="POST">{% csrf_token %}
-        <h3>Datos Empleado</h3>
-        <p>
-            Nombres: {{ form.nombre }}
-        </p>
-        <p>
-            Apellidos: {{ form.apellidos }}
-        </p>
-        <h3>Datos de Departamento</h3>
-        <p>
-            Departamento: {{ form.departamento }}
-        </p>
-        <p>
-            Codigo Dep: {{ form.shorname }}
-        </p>
-        <button type="submit">Guardar</button>
-
-    </form>
-
-
-</body>
-</html>

@@ -44,8 +44,11 @@
                       {{ form.avatar }}
                     </label>
                 </div>
-                <div class="cell">
+                <div class="cell large-2">
                     <button type="submit" class="submit success button">Guardar</button>
+                </div>
+                <div class="cell large-2">
+                    <a href="{% url 'persona_app:empleados_admin' %}" class="submit alert button">Cancelar</a>
                 </div>
             </form>
         </div>

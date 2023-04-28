@@ -4,22 +4,25 @@
     Eliminar Empleado
 {% endblock title %}
 
-
 {% block content %}
 {% include 'includes/header.html' %}
 <div class="grid-container">
     <div class="grid-x" style="margin-top: 10px;">
         <h3 class="cell">Eliminar Empleado: {{ object.first_name }} {{ object.last_name }}</h3>
-        <form class="cell" method="POST">{% csrf_token %}
-            <div class="callout secondary">
-                <h5>¿Desea eliminar este empleado?</h5>
-                <p>Recuerde que al eliminar se perderán todos los datos de este empleado.</p>
-                <button type="submit" class="alert button">Confirmar</button>
-            </div>
-        </form>
+        <div class="cell">
+            <form class="grid-x grid-margin-x callout secondary" method="POST">{% csrf_token %}
+                <h5 class="cell">¿Desea eliminar este empleado?</h5>
+                <p class="cell">Recuerde que al eliminar se perderán todos los datos de este empleado.</p>
+                <div class="cell large-2">
+                    <button type="submit" class="cell large-2 submit alert button">Confirmar</button>
+                </div>
+                <div class="cell large-2">
+                    <a href="{% url 'persona_app:empleados_admin' %}" class="cell large-2 submit success button">Cancelar</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
 {% endblock content %}
 
 
