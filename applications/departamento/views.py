@@ -13,6 +13,7 @@ class DepartamentoListView(ListView):
     model = Departamento
     template_name = "departamento/lista.html"
     context_object_name = 'departamentos'
+    
 
 class NewDepartamentoView(FormView):
     """En esta clase lo que se hace es implementar la entrada
@@ -20,7 +21,7 @@ class NewDepartamentoView(FormView):
     el requerimiento es que solo se cree un Departamento nuevo si hay un empleado registrado en él"""
     template_name = 'departamento/new_departamento.html'
     form_class = NewDepartamentoForm
-    success_url = '/'
+    success_url = reverse_lazy('departamento_app:departamento_list')
 
     def form_valid(self, form):
         print('****estamos en el form_valid')

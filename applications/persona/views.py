@@ -116,7 +116,7 @@ class EmpleadoCreateView(CreateView):
     template_name = "persona/add.html"
     #fields para que se habiliten todos los campos de la clase usar :  '__all__'
     form_class = EmpleadoForm
-    success_url = reverse_lazy('persona_app:empleados_admin')
+    success_url = reverse_lazy('persona_app:empleados_all')
 
     def form_valid(self, form):
         """Si el formulario es validado, guarda el campo asociado."""
